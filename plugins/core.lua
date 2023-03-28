@@ -20,6 +20,10 @@ return {
       return opts
     end,
   },
+  { "lukas-reineke/indent-blankline.nvim", enabled = false },
+  { "max397574/better-escape.nvim", enabled = false },
+  { "declancm/cinnamon.nvim", enabled = false },
+  { "windwp/nvim-autopairs", enabled = false },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --
@@ -63,15 +67,15 @@ return {
   --   end,
   -- },
   -- By adding to the which-key config and using our helper function you can add more which-key registered bindings
-  -- {
-  --   "folke/which-key.nvim",
-  --   config = function(plugin, opts)
-  --     require "plugins.configs.which-key"(plugin, opts) -- include the default astronvim config that calls the setup call
-  --     -- Add bindings which show up as group name
-  --     local wk = require "which-key"
-  --     wk.register({
-  --       b = { name = "Buffer" },
-  --     }, { mode = "n", prefix = "<leader>" })
-  --   end,
-  -- },
+  {
+    "folke/which-key.nvim",
+    config = function(plugin, opts)
+      require "plugins.configs.which-key"(plugin, opts) -- include the default astronvim config that calls the setup call
+      -- Add bindings which show up as group name
+      local wk = require "which-key"
+      wk.register({
+        b = { name = "Buffer" },
+      }, { mode = "n", prefix = "<leader>" })
+    end,
+  },
 }
