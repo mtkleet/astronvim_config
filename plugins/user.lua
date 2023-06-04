@@ -8,8 +8,8 @@ return {
   --   config = function()
   --     require("lsp_signature").setup()
   --   end,
+  --   },
   -- },
-  --
   "sheerun/vim-polyglot",
   "lambdalisue/suda.vim",
   "tjdevries/colorbuddy.nvim",
