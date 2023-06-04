@@ -24,6 +24,20 @@ return {
   { "max397574/better-escape.nvim", enabled = false },
   { "declancm/cinnamon.nvim", enabled = false },
   { "windwp/nvim-autopairs", enabled = false },
+  {
+    "p00f/clangd_extensions.nvim",
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = { ensure_installed = { "clangd" } },
+    },
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = { ensure_installed = { "rust_analyzer" } },
+    },
+  },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --
