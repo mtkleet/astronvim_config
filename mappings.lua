@@ -11,7 +11,9 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
@@ -20,16 +22,16 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-  	["<ESC>"] = { "<cmd>:noh<cr>", desc = "Remove highlights from search results" },
-  	["<C-c>"] = { "<cmd> %y+ <cr>", desc = "Copy buffer content to clipboard" },
-  	["<F4>"] = { "<cmd>AerialToggle<cr>", desc = "Toggle Aerial (tag viewer)" },
-  	["<F3>"] = { "<cmd>Neotree toggle<cr>", desc = "Open Neotree (file explorer)" },
-  	["<F2>"] = { "<cmd>set number! norelativenumber!<cr>", desc = "Toggle numberline" },
-  	["<leader>a"] = { "ggVG", desc = "Select all" },
+    ["<ESC>"] = { "<cmd>:noh<cr>", desc = "Remove highlights from search results" },
+    ["<C-c>"] = { "<cmd> %y+ <cr>", desc = "Copy buffer content to clipboard" },
+    ["<F4>"] = { "<cmd>AerialToggle<cr>", desc = "Toggle Aerial (tag viewer)" },
+    ["<F3>"] = { "<cmd>Neotree toggle<cr>", desc = "Open Neotree (file explorer)" },
+    ["<F2>"] = { "<cmd>set number! norelativenumber!<cr>", desc = "Toggle numberline" },
+    ["<leader>a"] = { "ggVG", desc = "Select all" },
   },
-	v = {
-		["<F5>"] = { "<Plug>SnipRun<cr>", desc = "Execute :SnipRun in visual-selection mode" },
-	},
+  v = {
+    ["<F6>"] = { "<Plug>SnipRun<cr>", desc = "Execute :SnipRun in visual-selection mode" },
+  },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
