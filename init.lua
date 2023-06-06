@@ -36,13 +36,12 @@ return {
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
+          "lua", "json",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
-        "lua_ls",
-        "json",
+        -- lua_ls
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -58,9 +57,8 @@ return {
       clangd = function(_, opts) require("clangd_extensions").setup { server = opts } end,
       rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end,
     },
-    config = {
-      clangd = { capabilities = { offsetEncoding = "utf-8" } },
-    },
+    -- config = {
+    -- },
   },
 
   -- Configure require("lazy").setup() options

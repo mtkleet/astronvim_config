@@ -11,6 +11,7 @@ return {
       null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.prettier,
       null_ls.builtins.diagnostics.misspell,
+      null_ls.builtins.diagnostics.clang_check,
 			null_ls.builtins.diagnostics.zsh,
 			null_ls.builtins.code_actions.shellcheck,
     }
