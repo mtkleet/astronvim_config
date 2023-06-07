@@ -40,19 +40,17 @@ return {
     "svrana/neosolarized.nvim",
     config = function() require("neosolarized").setup { comment_italics = true, background_set = false } end,
   },
-  {
-    "michaelb/sniprun",
+  { "michaelb/sniprun",
     lazy = false,
-    build = "bash ./install.sh",
-    config = function()
-      require("sniprun").setup {
-        inline_messages = 0,
-        display = { "NvimNotify" },
-        borders = "single",
-        display_options = { notification_timeout = 2500 },
-        interpreter_options = { Python3_original = { error_truncate = "long" } },
-      }
-    end,
+    build = "bash ./install.sh 1",
+    cmd = "SnipRun",
+    opts = {
+      inline_messages = 0,
+      display = { "NvimNotify" },
+      borders = "single",
+      display_options = { notification_timeout = 2500 },
+      interpreter_options = { Python3_original = { error_truncate = "long" } },
+    }
   },
 
   -- You can disable default plugins as follows:
@@ -115,6 +113,28 @@ return {
       -- Add bindings which show up as group name
       local wk = require "which-key"
       wk.register({ b = { name = "Buffer" }, }, { mode = "n", prefix = "<leader>" })
+    end,
+  },
+  {
+    "rebelot/heirline.nvim",
+    opts = function(_, opts)
+      local status = require("astronvim.utils.status")
+      opts.statusline = { -- statusline
+        hl = { fg = "fg", bg = "bg" },
+        status.component.mode { mode_text = { padding = { left = 1, right = 1 } } }, -- add the mode text
+        status.component.git_branch(),
+        status.component.file_info { filetype = {}, filename = false, file_modified = false },
+        status.component.git_diff(),
+        status.component.diagnostics(),
+        status.component.fill(),
+        status.component.cmd_info(),
+        status.component.fill(),
+        status.component.lsp(),
+        status.component.treesitter(),
+        status.component.nav(),
+        -- remove the 2nd mode indicator on the right
+      }
+      return opts
     end,
   },
 }
