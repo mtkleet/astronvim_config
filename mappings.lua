@@ -30,7 +30,7 @@ return {
     ["<leader>a"] = { "ggVG", desc = "Select all" },
   },
   v = {
-    ["<F6>"] = { "<Plug>SnipRun<cr>", desc = "Execute :SnipRun in visual-selection mode" },
+    ["<F6>"] = { ":'<,'>SnipRun<cr>", desc = "Execute :SnipRun in visual-selection mode" },
   },
   t = {
     -- setting a mapping to false will disable it
