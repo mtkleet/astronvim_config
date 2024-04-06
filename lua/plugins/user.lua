@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
@@ -82,4 +80,6 @@ return {
       )
     end,
   },
+  --{ "simrat39/inlay-hints.nvim", lazy = false, config = true },
+  --{ "vladdoster/remember.nvim", lazy = false, ft = "remember", config = true },
 }
