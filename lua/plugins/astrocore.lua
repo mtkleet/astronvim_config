@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -63,8 +61,17 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        --  ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<C-c>"] = { "<cmd> %y+ <cr>", desc = "Copy buffer content to clipboard" },
+        ["<F4>"] = { "<cmd>AerialToggle<cr>", desc = "Toggle Aerial (tag viewer)" },
+        ["<F3>"] = { "<cmd>Neotree toggle<cr>", desc = "Open Neotree (file explorer)" },
+        ["<F2>"] = { "<cmd>set number! norelativenumber!<cr>", desc = "Toggle numberline" },
+        ["<leader>a"] = { "ggVG", desc = "Select all" },
+        ["<leader>q"] = { ":q<cr>", desc="Quit" },
       },
+      v = {
+        ["<F6>"] = { ":'<,'>SnipRun<cr>", desc = "Execute :SnipRun in visual-selection mode" },
+     },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
