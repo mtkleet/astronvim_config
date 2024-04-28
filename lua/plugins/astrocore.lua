@@ -62,7 +62,7 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         --  ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-        ["<C-c>"] = { "<cmd> %y+ <cr>", desc = "Copy buffer content to clipboard" },
+        --  ["<C-c>"] = { "<cmd> %y+ <cr>", desc = "Copy buffer content to clipboard" },
         ["<F4>"] = { "<cmd>AerialToggle<cr>", desc = "Toggle Aerial (tag viewer)" },
         ["<F3>"] = { "<cmd>Neotree toggle<cr>", desc = "Open Neotree (file explorer)" },
         ["<F2>"] = { "<cmd>set number! norelativenumber!<cr>", desc = "Toggle numberline" },
