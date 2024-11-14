@@ -1,24 +1,36 @@
 return {
   "rebelot/heirline.nvim",
-  opts = function(_, opts)
-    local status = require("astroui.status")
-    opts.statusline = { -- statusline
-      hl = { fg = "fg", bg = "bg" },
-      status.component.mode({
-        mode_text = { padding = { left = 1, right = 1 } },
-      }), -- add the mode text
-      status.component.git_branch(),
-      status.component.file_info(),
-      status.component.git_diff(),
-      status.component.diagnostics(),
-      status.component.fill(),
-      status.component.cmd_info(),
-      status.component.fill(),
-      status.component.lsp(),
-      status.component.virtual_env(),
-      status.component.treesitter(),
-      status.component.nav(),
-      -- remove the 2nd mode indicator on the right
-    }
-  end,
+opts = {
+  colors = {
+    WinBar = { fg = "#5c6370", bg = "#1e22a2" },
+    WinBarNC = { fg = "#5c6370", bg = "#1e22a2" },
+    none = "NONE",
+    fg = "#abb2bf",
+    bg = "#1e222a",
+    dark_bg = "#2c323c",
+    blue = "#61afef",
+    green = "#98c379",
+    grey = "#5c6370",
+    bright_grey = "#777d86",
+    dark_grey = "#5c5c5c",
+    orange = "#ff9640",
+    purple = "#c678dd",
+    bright_purple = "#a9a1e1",
+    red = "#e06c75",
+    bright_red = "#ec5f67",
+    white = "#c9c9c9",
+    yellow = "#e5c07b",
+    bright_yellow = "#ebae34"
+  }
+},
+  dependencies = { "Zeioth/heirline-components.nvim" },
+    config = function(_, opts)
+      local heirline = require "heirline"
+      local heirline_components = require "heirline-components.all"
+
+      -- Setup
+      heirline_components.init.subscribe_to_events()
+      heirline.load_colors(heirline_components.hl.get_colors())
+      heirline.setup(opts)
+    end,
 }

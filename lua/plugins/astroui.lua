@@ -8,7 +8,8 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "neosolarized",
+    colorscheme = "NeoSolarized",
+    colorscheme = "solarized-osaka",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
@@ -16,6 +17,9 @@ return {
       },
       astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
+        -- WinBar = { fg = "#5c6370", bg = "#1e222a" },
+        WinBar = { link = "StatusLine" }, -- window bar
+        WinBarNC = { link = "StatusLineNC" }, -- window bar in inactive windows--
       },
     },
     -- Icons can be configured throughout the interface

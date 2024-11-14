@@ -3,18 +3,14 @@
 
 ---@type LazySpec
 return {
-
   -- == Examples of Adding Plugins ==
-
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
-
   -- == Examples of Overriding Plugins ==
-
   -- customize alpha options
   {
     "goolord/alpha-nvim",
@@ -36,7 +32,6 @@ return {
       return opts
     end,
   },
-
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
     "L3MON4D3/LuaSnip",
@@ -77,7 +72,5 @@ return {
       )
     end,
   },
-  --{ "vladdoster/remember.nvim", lazy = false, ft = "remember", config = true },
-  { "max397574/better-escape.nvim", lazy = true },
   { "lukas-reineke/indent-blankline.nvim", enabled = false },
 }

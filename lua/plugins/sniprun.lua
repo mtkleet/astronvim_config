@@ -1,7 +1,7 @@
 return {
   "michaelb/sniprun",
-  build = "bash ./install.sh 1",
-  cmd = "SnipRun",
+  -- binary_path = "${XDG_DATA_HOME}/nvim/lazy_snapshot/plugins/SnipRun/build/sniprun",
+  build = "sh ./install.sh",
   opts = {
     inline_messages = 0,
     display = { "NvimNotify" },
